@@ -59,6 +59,7 @@ void CountSort::countSort() {
     for (int ix = 0; ix < max; ix++) {
         count[ix + 1] += count[ix];
     }
+    output_arr =  new int[size];
     for (int jx = size - 1; jx >= 0; jx--) {
         output_arr[count[org_arr[jx]] - 1] = org_arr[jx];
         count[org_arr[jx]]--;
@@ -66,7 +67,7 @@ void CountSort::countSort() {
     delete[] count;
 }
 void Countsort::printArr() {
-    int size = sizeof(output_arr) / sizeof(output_arr[0]);
+    //int size = sizeof(output_arr) / sizeof(output_arr[0]);
     for (int i = 0; i < size; i++) {
         if (i == size - 1) {
             cout << output_arr[i] << endl;
